@@ -5,4 +5,4 @@ from .serializers import DrinkSerialiser
 def drink_list(request):
   drinks = Drink.objects.all()
   serializer = DrinkSerialiser(drinks, many=True)
-  return JsonResponse(serializer.data)
+  return JsonResponse({'drinks': serializer.data})
